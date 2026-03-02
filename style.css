@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+    color: #e5e5e5;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+
+header {
+    background: rgba(42, 42, 42, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 18px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #facc15;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #facc15;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 140px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero span {
+    background: linear-gradient(45deg, #facc15, #eab308);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #cfcfcf;
+}
+
+/* GLOW BUTTON */
+
+.btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 35px;
+    background: #facc15;
+    color: #1f1f1f;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.8);
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 100px 60px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #facc15;
+}
+
+/* GLASS CARDS */
+
+.skills-grid,
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.card,
+.project-card {
+    background: rgba(42, 42, 42, 0.6);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover,
+.project-card:hover {
+    transform: translateY(-10px);
+    border: 1px solid #facc15;
+}
+
+/* PROJECT TEXT */
+
+.project-card h3 {
+    color: #facc15;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #cfcfcf;
+}
+
+/* CONTACT */
+
+#contact p {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(42, 42, 42, 0.7);
+    margin-top: 60px;
+    color: #bdbdbd;
+}
+
+/* ANIMATION */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+}
+/* ===== Progress Bar ===== */
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: #facc15;
+    width: 0%;
+    z-index: 2000;
+}
+
+/* ===== Floating Background Blobs ===== */
+
+.blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.blob1 {
+    width: 300px;
+    height: 300px;
+    background: #facc15;
+    top: 10%;
+    left: 10%;
+}
+
+.blob2 {
+    width: 350px;
+    height: 350px;
+    background: #eab308;
+    bottom: 10%;
+    right: 10%;
+}
+
+/* ===== Mobile Menu ===== */
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #facc15;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #2a2a2a;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
